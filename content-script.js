@@ -60,16 +60,24 @@ function detectTrackers(blocklist) {
     if (!src) return;
 
     blocklist.forEach((tracker) => {
-      const trackerDomain = tracker.name || tracker;
+      const trackerDomain = tracker.name;
 
       if (typeof trackerDomain !== 'string') return;
 
       if (src.includes(trackerDomain.toLowerCase())) {
-        matches.push(trackerDomain);
+        matches.push({
+          name: tracker.name,
+          category: tracker.category
+        });
       }
     });
   });
 
-  // Remove duplicate tracker names
-  return [...new Set(matches)];
+  // Remove duplicate trackers
+  return matches.filter(
+    (tracker, index, self) =>
+      index === self.findIndex(
+        (t) => t.name === tracker.name
+      )
+  );
 }

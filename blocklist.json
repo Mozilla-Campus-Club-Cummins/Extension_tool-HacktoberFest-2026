@@ -1,23 +1,86 @@
 [
-  "google-analytics.com",
-  "googletagmanager.com",
-  "doubleclick.net",
-  "facebook.net",
-  "connect.facebook.net",
-  "hotjar.com",
-  "amazon-adsystem.com",
-  "scorecardresearch.com",
-  "quantserve.com",
-  "criteo.com",
-  "taboola.com",
-  "outbrain.com",
-  "chartbeat.com",
-  "crwdcntrl.net",
-  "pubmatic.com",
-  "undertone.com",
-  "clarity.ms",
-  "analytics.yahoo.com",
-  "contentsquare.net",
-  "demdex.net",
-  "media.net"
+  {
+    "name": "google-analytics.com",
+    "category": "analytics"
+  },
+  {
+    "name": "googletagmanager.com",
+    "category": "analytics"
+  },
+  {
+    "name": "doubleclick.net",
+    "category": "advertising"
+  },
+  {
+    "name": "facebook.net",
+    "category": "social"
+  },
+  {
+    "name": "connect.facebook.net",
+    "category": "social"
+  },
+  {
+    "name": "hotjar.com",
+    "category": "analytics"
+  },
+  {
+    "name": "amazon-adsystem.com",
+    "category": "advertising"
+  },
+  {
+    "name": "scorecardresearch.com",
+    "category": "analytics"
+  },
+  {
+    "name": "quantserve.com",
+    "category": "analytics"
+  },
+  {
+    "name": "criteo.com",
+    "category": "advertising"
+  },
+  {
+    "name": "taboola.com",
+    "category": "advertising"
+  },
+  {
+    "name": "outbrain.com",
+    "category": "advertising"
+  },
+  {
+    "name": "chartbeat.com",
+    "category": "analytics"
+  },
+  {
+    "name": "crwdcntrl.net",
+    "category": "advertising"
+  },
+  {
+    "name": "pubmatic.com",
+    "category": "advertising"
+  },
+  {
+    "name": "undertone.com",
+    "category": "advertising"
+  },
+  {
+    "name": "clarity.ms",
+    "category": "analytics"
+  },
+  {
+    "name": "analytics.yahoo.com",
+    "category": "analytics"
+  },
+  {
+    "name": "contentsquare.net",
+    "category": "analytics"
+  },
+  {
+    "name": "demdex.net",
+    "category": "advertising"
+  },
+  {
+    "name": "media.net",
+    "category": "advertising"
+  }
 ]
