@@ -24,6 +24,29 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     });
   }
 
+  if (message.type === 'GET_PINNED_TRACKERS') {
+  browser.tabs.query({ pinned: true }).then((tabs) => {
+
+    const keys = tabs.map(tab => `tab_${tab.id}`);
+
+    return browser.storage.session.get(keys).then((data) => {
+      const counts = {};
+
+      tabs.forEach((tab) => {
+        const trackers = data[`tab_${tab.id}`] || [];
+
+        trackers.forEach((tracker) => {
+          counts[tracker] = (counts[tracker] || 0) + 1;
+        });
+      });
+
+      sendResponse(counts);
+    });
+  });
+
+  return true;
+}
+
   if (message.type === 'GET_TRACKERS') {
     browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
       const key = `tab_${tabs[0].id}`;
