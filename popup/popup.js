@@ -33,6 +33,31 @@ function loadAndRenderTrackers() {
   });
 }
 
+function loadPinnedTrackers() {
+  browser.runtime.sendMessage({ type: 'GET_PINNED_TRACKERS' }).then((counts) => {
+
+    const listEl = document.getElementById('pinnedTrackerList');
+    listEl.innerHTML = '';
+
+    const trackers = Object.entries(counts);
+
+    if (trackers.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = 'No pinned tabs found.';
+      listEl.appendChild(li);
+      return;
+    }
+
+    trackers
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([tracker, count]) => {
+        const li = document.createElement('li');
+        li.textContent = `${tracker} (${count})`;
+        listEl.appendChild(li);
+      });
+  });
+}
+
 function loadInfo() {
   const manifest = browser.runtime.getManifest();
   document.getElementById('infoVersion').textContent = manifest.version;
@@ -51,4 +76,5 @@ function loadInfo() {
 }
 
 loadAndRenderTrackers();
+loadPinnedTrackers();
 loadInfo();
